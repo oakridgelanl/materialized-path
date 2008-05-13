@@ -1,7 +1,7 @@
 ActsAsMaterializedPath
 ======================
 
-This plugin implements a set of trees (nested set) in a single table.
+This mixin implements a set of trees (nested set) in a single table.
 
 Within its limitations, this plugin is meant to be more efficient than
 existing implementations of nested sets.
@@ -30,4 +30,4 @@ In addition, the collating sequence for ascii representable characters
 must be ascii.  
 
 
-Copyright (c) 2008 [name of plugin creator], released under the MIT license
+Copyright (c) 2008 Antony Nigel Donovan, released under the MIT license
