@@ -17,6 +17,10 @@ acts_as_materialized_path :delimiter => '.',
             		  :column => 'materialized_path',
             		  :places => 3,
 
+The values show here are the defaults.
+
+
+
 
 In the migration file, ensure the path_column_name is not null and has
 a unique index:
