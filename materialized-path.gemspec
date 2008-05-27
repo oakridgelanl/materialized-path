@@ -8,11 +8,11 @@ Gem::Specification.new do |spec|
   spec.date = '2008-05-15'
   spec.summary = 'An ActsAs mixin implementing a set of trees (nested set) for ActiveRecord  '
   spec.email = 'and@prospectmarkets.com'
-#  spec.homepage = 'http://github.com/mojombo/grit'
+#  spec.homepage = 'http://'
   spec.description = 'An ActsAs mixin implementing a set of trees (nested set) for ActiveRecord  '
   spec.has_rdoc = false
   spec.authors = ['Antony Donovan']
-  spec.files = FileList[ 'README' ]
+  spec.files = FileList[ 'README', 'lib/*' ]#.exclude('*.gem')
 #  spec.test_files = [ '' ]
 #  spec.rdoc_options = ['--main', 'README.txt']
 #  spec.extra_rdoc_files = ['History.txt', 'Manifest.txt', 'README.txt']
