@@ -23,10 +23,11 @@ module ActiveRecord #:nodoc:
 
       module ClassMethods
 
+        #
         def acts_as_materialized_path(options = {})
           conf = {
             :delimiter => '.',
-            :base => 36,
+            :base => 10,
             :column => 'materialized_path',
             :places => 3,
           }
@@ -134,7 +135,7 @@ module ActiveRecord #:nodoc:
         end
 
         #
-        def num2path_string(num)
+        def num2path_string(num)#:nodoc:
           str = num.to_s(mp_base)
           len = str.length
 
@@ -152,8 +153,7 @@ module ActiveRecord #:nodoc:
                 :order => mp_asc )
         end
 
-
-        def inner_delete(id)
+        def inner_delete(id)#:nodoc:
           c = find(id, :select => mp_column)
         rescue RecordNotFound then
           return 0
@@ -197,6 +197,7 @@ module ActiveRecord #:nodoc:
                            the_path.length],
                           :order => mp_asc)
         end
+
         #
         def destroy
           raise DestroyNotLeaf unless children.length == 0

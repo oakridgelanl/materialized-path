@@ -12,14 +12,12 @@ Example
 
 In the class implementing the trees:
 
-acts_as_materialized_path :delimiter => '.',
-            		  :base => 36,
-            		  :column => 'materialized_path',
-            		  :places => 3,
+  acts_as_materialized_path :delimiter => '.',
+  			    :base => 10,
+            		    :column => 'materialized_path',
+            		    :places => 3,
 
 The values show here are the defaults.
-
-
 
 
 In the migration file, ensure the path_column_name is not null and has
@@ -30,8 +28,12 @@ a unique index:
   add_index(:tree_table, [:materialized_path], :unique => true)
 
 
-In addition, the collating sequence for ascii representable characters
-must be ascii.  
+In addition, the collating sequence for ascii representable
+characters, c, must be ascii or p < n < a, where ispunct(p) &&
+isdigit(n) && isalpha(c) (this handles UTF-8 collation).
+
+
+
 
 
 Copyright (c) 2008 Antony Nigel Donovan, released under the MIT license
