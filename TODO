@@ -1,0 +1,11 @@
+-*- text -*-
+
+Include tests from plugin version in gem.
+
+Include examples from plugin version in gem.
+
+Add data exclusion functionality for methods that only traverse the
+tree(s) in some way (i.e. don't fetch anything beyond id and path
+columns for these methods).  Possibly allow for this functionality on
+most methods.
+

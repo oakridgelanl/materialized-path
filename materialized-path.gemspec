@@ -17,6 +17,6 @@ Gem::Specification.new do |spec|
 #  spec.test_files = [ '' ]
   spec.rdoc_options = ['--main', 'README']
 #  spec.extra_rdoc_files = ['History.txt', 'Manifest.txt', 'README.txt']
-  spec.extra_rdoc_files = ['README']
+  spec.extra_rdoc_files = ['README', 'TODO']
   spec.add_dependency('activerecord', ['>= 2.0.2'])
 end
