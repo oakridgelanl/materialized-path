@@ -244,27 +244,39 @@ module ActiveRecord #:nodoc:
         #
         def save
           if new_record? && !the_path
-            self.class.transaction do
-              basepath = ''
-              if mp_parent_id_for_save.to_i > 0
-                relation = mp_parent_id_for_save
-                sibling = false
-              elsif mp_sibling_id_for_save.to_i > 0
-                relation = mp_sibling_id_for_save
-                sibling = true
-              end
-              basepath =
-                self.class.find(relation).the_path(sibling) if relation
-
-              nextval = nextvalue(basepath)
-              set_path(basepath+self.class.num2path_string(nextval)+mp_delimiter)
-              super
-            end
+            handle_new_record_code
+            super
+          else
+            super
+          end
+        end
+        
+        def save!
+          if new_record? && !the_path
+            handle_new_record_code
+            super
           else
             super
           end
         end
 
+        def handle_new_record_code
+          self.class.transaction do
+            basepath = ''
+            if mp_parent_id_for_save.to_i > 0
+              relation = mp_parent_id_for_save
+              sibling = false
+            elsif mp_sibling_id_for_save.to_i > 0
+              relation = mp_sibling_id_for_save
+              sibling = true
+            end
+            basepath =
+              self.class.find(relation).the_path(sibling) if relation
+
+            nextval = nextvalue(basepath)
+            set_path(basepath+self.class.num2path_string(nextval)+mp_delimiter)
+          end
+        end
         #
 
         #

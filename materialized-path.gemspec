@@ -4,14 +4,14 @@
 
 Gem::Specification.new do |spec|
   spec.name = 'materialized-path'
-  spec.version = '0.0.2'
-  spec.date = '2008-05-15'
+  spec.version = '0.0.3'
+  spec.date = '2008-07-30'
   spec.summary = 'An ActsAs mixin implementing a set of trees (nested set) for ActiveRecord  '
   spec.email = 'and@prospectmarkets.com'
 #  spec.homepage = 'http://'
   spec.description = 'An ActsAs mixin implementing a set of trees (nested set) for ActiveRecord  '
   spec.has_rdoc = true
-  spec.authors = ['Antony Donovan']
+  spec.authors = ['Antony Donovan', 'Jonathan Barket']
 #  spec.files = FileList[ 'README', 'lib/*' ]#.exclude('*.gem')
   spec.files = [ 'README', 'lib/acts_as_materialized_path.rb' ]
 #  spec.test_files = [ '' ]
